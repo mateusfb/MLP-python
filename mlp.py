@@ -14,7 +14,7 @@ def read_dataset(dataset_path):
     data = dataset[:,:-1]
     labels = dataset[:,-1:].ravel() #a função ravel() transforma o array bidimensional contendo os labels em um array unidimensional
 
-    return data, labels
+    return data, labels #retornando uma tupla contendo os dados e os rótulos
 
 data, labels = read_dataset('iris.csv') #lendo o dataset
 
@@ -34,7 +34,7 @@ mlp = MLPClassifier(hidden_layer_sizes=(150,100,50), max_iter=300,activation = '
 
 mlp.fit(data, labels) #Treinando o classificador com o dados e os rótulos do dataset
 
-to_be_classified = [[6.3,3.3,6.0,2.5]] #definindo as instâncias que serão classidicados, neste caso apenas uma
-predicted = mlp.predict(to_be_classified) #predizendo o rótulo das instâncias presentes em to_be_classified e armazenando em predited
+to_be_classified = [[6.3,3.3,6.0,2.5]] #definindo as instâncias que serão classificadas, neste caso apenas uma
+predicted = mlp.predict(to_be_classified) #predizendo o rótulo das instâncias presentes em to_be_classified e armazenando em predicted
 
 print(predicted)
